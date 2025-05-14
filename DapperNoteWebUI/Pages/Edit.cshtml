@@ -1,0 +1,20 @@
+﻿@page
+@model DapperNoteWebUI.Pages.EditModel
+
+<h2 style="text-align: center; color: #00bcd4;">Notu Düzenle</h2>
+
+<form method="post">
+    <input type="hidden" asp-for="Note.Id" />
+
+    <label>Başlık</label>
+    <input asp-for="Note.Title" type="text" />
+    <span asp-validation-for="Note.Title" style="color: red;"></span>
+
+    <label>İçerik</label>
+    <textarea asp-for="Note.Content"></textarea>
+    <span asp-validation-for="Note.Content" style="color: red;"></span>
+
+    <button type="submit">Güncelle</button>
+    <a class="btn" href="/Index" style="margin-left: 1rem;">İptal</a>
+</form>
+

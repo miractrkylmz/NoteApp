@@ -1,0 +1,18 @@
+﻿@page
+@model DapperNoteWebUI.Pages.CreateModel
+
+<h2 style="text-align: center; color: #00bcd4;">Yeni Not Oluştur</h2>
+
+<form method="post">
+    <label>Başlık</label>
+    <input asp-for="NewNote.Title" type="text" />
+    <span asp-validation-for="NewNote.Title" style="color: red;"></span>
+
+    <label>İçerik</label>
+    <textarea asp-for="NewNote.Content"></textarea>
+    <span asp-validation-for="NewNote.Content" style="color: red;"></span>
+
+    <button type="submit">Kaydet</button>
+    <a class="btn" href="/Index" style="margin-left: 1rem;">İptal</a>
+</form>
+

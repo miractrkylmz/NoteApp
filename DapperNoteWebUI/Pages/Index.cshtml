@@ -1,0 +1,32 @@
+﻿@page
+@model DapperNoteWebUI.Pages.IndexModel
+
+<div class="table-container">
+    <table>
+        <thead>
+            <tr>
+                <th>Başlık</th>
+                <th>İçerik</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var note in Model.Notes)
+            {
+                <tr>
+                    <td>@note.Title</td>
+                    <td>@note.Content</td>
+                    <td>
+                        <a class="btn" href="/Edit?id=@note.Id">Düzenle</a>
+                        <a class="btn" href="/Delete?id=@note.Id">Sil</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
+
+<div style="text-align: center; margin-top: 1rem;">
+    <a class="btn" href="/Create">Yeni Not Oluştur</a>
+</div>
+
